@@ -1,0 +1,29 @@
+# R session used for the final run of R/04_gamm.R, R/05_panas.R and report/report.qmd
+# Recorded 2026-10-21 (locale and time-zone lines removed)
+
+R version 4.6.1 (2026-06-24 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 11 x64 (build 26200)
+
+Matrix products: default
+  LAPACK version 3.12.1
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] rmarkdown_2.31  knitr_1.51      here_1.0.2      mgcv_1.9-4     
+ [5] nlme_3.1-169    lubridate_1.9.5 forcats_1.0.1   stringr_1.6.0  
+ [9] dplyr_1.2.1     purrr_1.2.2     readr_2.2.0     tidyr_1.3.2    
+[13] tibble_3.3.1    ggplot2_4.0.3   tidyverse_2.0.0
+
+loaded via a namespace (and not attached):
+ [1] Matrix_1.7-5       gtable_0.3.6       compiler_4.6.1     tidyselect_1.2.1  
+ [5] splines_4.6.1      scales_1.4.0       fastmap_1.2.0      lattice_0.22-9    
+ [9] R6_2.6.1           generics_0.1.4     rprojroot_2.1.1    pillar_1.11.1     
+[13] RColorBrewer_1.1-3 tzdb_0.5.0         rlang_1.3.0        stringi_1.8.9     
+[17] xfun_0.60          S7_0.2.2           otel_0.2.0         timechange_0.4.0  
+[21] cli_3.6.6          withr_3.0.3        magrittr_2.0.5     digest_0.6.39     
+[25] grid_4.6.1         hms_1.1.4          lifecycle_1.0.5    vctrs_0.7.3       
+[29] evaluate_1.0.5     glue_1.8.1         farver_2.1.2       htmltools_0.5.9   
+[33] tools_4.6.1        pkgconfig_2.0.3   

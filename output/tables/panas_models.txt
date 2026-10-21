@@ -1,0 +1,72 @@
+Ratings with >= 6 usable windows in the preceding hour: 94 of 110 
+# A tibble: 10 × 3
+   timepoint ok        n
+   <chr>     <lgl> <int>
+ 1 10        FALSE    10
+ 2 10        TRUE     12
+ 3 14        FALSE     2
+ 4 14        TRUE     20
+ 5 18        FALSE     1
+ 6 18        TRUE     21
+ 7 22        FALSE     1
+ 8 22        TRUE     21
+ 9 9+1       FALSE     2
+10 9+1       TRUE     20
+
+Model data: 92 ratings from 21 participants
+
+===== Positive affect =====
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+pos ~ hrv_within + hrv_between + timepoint + s(user, bs = "re")
+
+Parametric coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    17.488     13.529   1.293 0.200431    
+hrv_within     -1.171      1.367  -0.857 0.394569    
+hrv_between     2.677      3.945   0.679 0.499680    
+timepoint14    -3.026      1.547  -1.956 0.054491 .  
+timepoint18    -1.165      1.520  -0.766 0.446159    
+timepoint22    -6.066      1.525  -3.977 0.000169 ***
+timepoint9+1   -3.656      1.576  -2.320 0.023279 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+          edf Ref.df   F p-value    
+s(user) 15.73     19 4.9  <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.558   Deviance explained = 66.4%
+-REML =  265.9  Scale est. = 16.549    n = 92
+
+===== Negative affect =====
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+neg ~ hrv_within + hrv_between + timepoint + s(user, bs = "re")
+
+Parametric coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept)   9.97609    8.64001   1.155    0.252
+hrv_within    0.09210    1.10254   0.084    0.934
+hrv_between   1.50573    2.50931   0.600    0.550
+timepoint14  -0.50162    1.24374  -0.403    0.688
+timepoint18   0.24603    1.22221   0.201    0.841
+timepoint22  -0.03618    1.22637  -0.030    0.977
+timepoint9+1 -1.72133    1.26527  -1.360    0.178
+
+Approximate significance of smooth terms:
+          edf Ref.df     F  p-value    
+s(user) 13.76     19 2.598 4.68e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =   0.36   Deviance explained = 49.9%
+-REML = 243.16  Scale est. = 10.773    n = 92

@@ -1,0 +1,103 @@
+Windows: 5632  Participants: 22  AR(1) rho (lnRMSSD): 0.78 
+
+===== m_rmssd =====
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+ln_rmssd ~ s(clock, bs = "cc", k = 16) + s(user, bs = "re")
+
+Parametric coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  3.51540    0.04115   85.42   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+            edf Ref.df      F p-value    
+s(clock)  9.704     14 19.615  <2e-16 ***
+s(user)  18.381     21  6.927  <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.308   Deviance explained = 31.1%
+fREML =  570.2  Scale est. = 0.17558   n = 5632
+
+===== m_hr =====
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+mean_hr ~ s(clock, bs = "cc", k = 16) + s(user, bs = "re")
+
+Parametric coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   74.704      1.292   57.84   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+            edf Ref.df      F p-value    
+s(clock)  9.999     14 35.648  <2e-16 ***
+s(user)  18.724     21  8.227  <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.483   Deviance explained = 48.5%
+fREML =  18104  Scale est. = 115.79    n = 5632
+
+===== m_fs =====
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+ln_rmssd ~ s(clock, bs = "cc", k = 16) + s(clock, user, bs = "fs", 
+    xt = list(bs = "cc"), k = 8, m = 1)
+
+Parametric coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  3.51062    0.04158   84.43   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                 edf Ref.df     F p-value    
+s(clock)       9.571     14 7.141  <2e-16 ***
+s(clock,user) 68.392    153 2.493  <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.508   Deviance explained = 51.5%
+fREML = 507.04  Scale est. = 0.1687    n = 5632
+
+===== m_meq =====
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+ln_rmssd ~ s(clock, bs = "cc", k = 16) + s(MEQ, k = 3) + ti(clock, 
+    MEQ, bs = c("cc", "tp"), k = c(10, 3)) + s(clock, user, bs = "fs", 
+    xt = list(bs = "cc"), k = 8, m = 1)
+
+Parametric coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   3.5103     0.0418   83.98   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                 edf  Ref.df     F  p-value    
+s(clock)       9.589  14.000 7.377  < 2e-16 ***
+s(MEQ)         1.386   1.414 0.428 0.719138    
+ti(clock,MEQ)  3.391  16.000 0.482 0.000355 ***
+s(clock,user) 64.326 152.000 2.340  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.513   Deviance explained =   52%
+fREML = 508.21  Scale est. = 0.16858   n = 5632
+
